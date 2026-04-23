@@ -1,0 +1,314 @@
+# AI Workflow Automation Configuration
+# Project: doc_template_lib
+
+project:
+  name: "doc_template_lib"
+  type: "configuration-library"
+  description: "Reusable Markdown guide templates for architecture and AI-assisted development conventions"
+  kind: "configuration_library"
+  version: "1.0.0"
+
+tech_stack:
+  primary_language: "markdown"
+  secondary_languages:
+    - "yaml"
+  build_system: "none"
+  test_framework: "none"
+  test_command: ""
+  lint_command: ""
+  lint_commands:
+
+structure:
+  source_dirs: []
+  test_dirs: []
+  docs_dirs:
+    - "."
+    - ".github"
+  key_docs:
+    - README.md
+    - HIGH_COHESION_GUIDE.md
+    - LOW_COUPLING_GUIDE.md
+    - .github/copilot-instructions.md
+
+version:
+  config_files: []
+
+ai_personas:
+  enabled:
+    - documentation_expert
+    - technical_writer
+    - architecture_reviewer
+    - devops_engineer
+    - git_specialist
+  disabled:
+    - test_engineer
+    - code_quality_analyst
+    - dependency_analyst
+    - typescript_reviewer
+    - async_performance_engineer
+    - ux_analyst
+    - accessibility_expert
+    - aws_serverless_engineer
+    - api_designer
+    - performance_engineer
+    - security_expert
+    - prompt_engineer
+
+workflow:
+  settings:
+    auto_mode: false
+    parallel_execution: true
+    smart_execution: true
+    ml_optimize: false
+    multi_stage: false
+    auto_commit: false
+
+  stages:
+    quick:
+      enabled: true
+      steps: [step_00, step_01, step_01_5, step_02, step_03, step_04]
+    medium:
+      enabled: true
+      steps:
+        [
+          step_00,
+          step_01,
+          step_01_5,
+          step_02,
+          step_02_5,
+          step_21,
+          step_03,
+          step_04,
+          step_05,
+          step_13,
+          step_11,
+          step_17
+        ]
+    full:
+      enabled: true
+      steps:
+        [
+          step_00,
+          step_0b,
+          step_01,
+          step_01_5,
+          step_02,
+          step_02_5,
+          step_21,
+          step_03,
+          step_04,
+          step_05,
+          step_13,
+          step_11,
+          step_17,
+          step_12
+        ]
+
+  steps:
+    - id: step_00
+      name: "Pre-Analysis"
+      description: "Analyze the documentation template repository and determine which guides changed"
+      enabled: true
+      dependencies: []
+
+    - id: step_0b
+      name: "Bootstrap Documentation"
+      description: "Create missing guide files when the template library grows"
+      enabled: true
+      optional: true
+      dependencies:
+        - step_00
+
+    - id: step_01
+      name: "Documentation Updates"
+      description: "Review and improve repository documentation against the live file set"
+      enabled: true
+      dependencies:
+        - step_00
+
+    - id: step_01_5
+      name: "Copilot Instructions Validation"
+      description: "Audit and refresh .github/copilot-instructions.md against live repo facts"
+      enabled: true
+      dependencies:
+        - step_01
+
+    - id: step_02
+      name: "Consistency Analysis"
+      description: "Check the guides and instructions for overlap, drift, and contradictory guidance"
+      enabled: true
+      dependencies:
+        - step_01_5
+
+    - id: step_02_5
+      name: "Documentation Optimization"
+      description: "Improve structure, density, and reuse across the documentation templates"
+      enabled: true
+      dependencies:
+        - step_02
+
+    - id: step_21
+      name: "Doc Consolidation"
+      description: "Merge overlapping markdown guidance into canonical documents when needed"
+      enabled: true
+      dependencies:
+        - step_02_5
+
+    - id: step_03
+      name: "Script References"
+      description: "Validate references to commands, tools, and file paths in documentation"
+      enabled: true
+      dependencies:
+        - step_02
+
+    - id: step_04
+      name: "Configuration Validation"
+      description: "Validate workflow configuration and Copilot guidance files"
+      enabled: true
+      dependencies:
+        - step_00
+
+    - id: step_05
+      name: "Directory Structure"
+      description: "Validate the expected layout for a documentation template repository"
+      enabled: true
+      dependencies:
+        - step_04
+
+    - id: step_06
+      name: "Test Review"
+      description: "Review test suite (none in this repository)"
+      enabled: false
+      reason: "No test suite is configured in this documentation-only repository"
+      dependencies: []
+
+    - id: step_07
+      name: "Test Generation"
+      description: "Generate tests (not applicable)"
+      enabled: false
+      reason: "No source code or test harness is present"
+      dependencies: []
+
+    - id: step_08
+      name: "Test Execution"
+      description: "Run tests (not applicable)"
+      enabled: false
+      reason: "No test commands are configured"
+      dependencies: []
+
+    - id: step_09
+      name: "Dependency Analysis"
+      description: "Analyze package dependencies (not applicable)"
+      enabled: false
+      reason: "No package manager or runtime dependency graph is present"
+      dependencies: []
+
+    - id: step_10
+      name: "Code Quality"
+      description: "Run source-code quality analysis (not applicable)"
+      enabled: false
+      reason: "The repository currently contains documentation templates, not source code"
+      dependencies: []
+
+    - id: step_11
+      name: "Context Management"
+      description: "Summarize repository context for future workflow runs"
+      enabled: true
+      dependencies:
+        - step_13
+
+    - id: step_12
+      name: "Git Finalization"
+      description: "Finalize git state after a workflow run"
+      enabled: true
+      dependencies:
+        - step_17
+
+    - id: step_13
+      name: "Markdown Linting"
+      description: "Review markdown quality for the repository's guide files"
+      enabled: true
+      dependencies:
+        - step_01
+
+    - id: step_14
+      name: "Prompt Engineering"
+      description: "Prompt optimization (not applicable)"
+      enabled: false
+      reason: "This repository stores reusable guides, not prompt systems"
+      dependencies: []
+
+    - id: step_15
+      name: "UX Analysis"
+      description: "UX review (not applicable)"
+      enabled: false
+      reason: "No UI layer is present"
+      dependencies: []
+
+    - id: step_16
+      name: "Version Update"
+      description: "Version update (not currently used)"
+      enabled: false
+      reason: "No version-managed build or release file is configured in this repo"
+      dependencies: []
+
+    - id: step_17
+      name: "Workflow Summary"
+      description: "Generate a workflow summary for documentation-focused runs"
+      enabled: true
+      dependencies:
+        - step_11
+
+    - id: step_18
+      name: "Debugging Analysis"
+      description: "Debugging review (not applicable)"
+      enabled: false
+      reason: "No executable runtime or code path debugging applies here"
+      dependencies: []
+
+    - id: step_19
+      name: "TypeScript Review"
+      description: "TypeScript review (not applicable)"
+      enabled: false
+      reason: "No TypeScript sources are present"
+      dependencies: []
+
+    - id: step_20
+      name: "Async Performance Review"
+      description: "Async performance review (not applicable)"
+      enabled: false
+      reason: "No async runtime code is present"
+      dependencies: []
+
+    - id: step_22
+      name: "Accessibility Review"
+      description: "Accessibility review (not applicable)"
+      enabled: false
+      reason: "The repository has no HTML/CSS or rendered UI surface"
+      dependencies: []
+
+    - id: step_23
+      name: "Performance Review"
+      description: "Performance review (not applicable)"
+      enabled: false
+      reason: "There is no executable application surface to benchmark"
+      dependencies: []
+
+linting:
+  md_linter: "none"
+  md_glob: "**/*.md"
+  md_excludes:
+    - ".ai_workflow/**"
+    - ".git/**"
+
+git:
+  tag_on_run: false
+
+step_overrides:
+  step_01:
+    task_scope:
+      eligible_docs:
+        - README.md
+        - HIGH_COHESION_GUIDE.md
+        - LOW_COUPLING_GUIDE.md
+        - .github/copilot-instructions.md
