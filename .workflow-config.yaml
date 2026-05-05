@@ -28,6 +28,7 @@ structure:
     - README.md
     - HIGH_COHESION_GUIDE.md
     - LOW_COUPLING_GUIDE.md
+    - REFERENTIAL_TRANSPARENCY.md
     - .github/copilot-instructions.md
 
 version:
@@ -273,4 +274,5 @@ step_overrides:
         - README.md
         - HIGH_COHESION_GUIDE.md
         - LOW_COUPLING_GUIDE.md
+        - REFERENTIAL_TRANSPARENCY.md
         - .github/copilot-instructions.md

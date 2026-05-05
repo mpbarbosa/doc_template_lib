@@ -15,5 +15,3 @@ This file provides durable, high-signal guidance for Copilot-assisted developmen
 - Keep documents actionable: favor rules, signals, heuristics, and checklists over narrative discussion.
 - When adding or updating guides, mirror the structure and style of existing documents for consistency.
 - Ensure `.workflow-config.yaml` accurately reflects the repository's scope and usage.
-
-For further details, always refer to the authoritative [README.md](../README.md).
