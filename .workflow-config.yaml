@@ -66,43 +66,10 @@ workflow:
   stages:
     quick:
       enabled: true
-      steps: [step_00, step_01, step_01_5, step_02, step_03, step_04]
     medium:
       enabled: true
-      steps:
-        [
-          step_00,
-          step_01,
-          step_01_5,
-          step_02,
-          step_02_5,
-          step_21,
-          step_03,
-          step_04,
-          step_05,
-          step_13,
-          step_11,
-          step_17
-        ]
     full:
       enabled: true
-      steps:
-        [
-          step_00,
-          step_0b,
-          step_01,
-          step_01_5,
-          step_02,
-          step_02_5,
-          step_21,
-          step_03,
-          step_04,
-          step_05,
-          step_13,
-          step_11,
-          step_17,
-          step_12
-        ]
 
   steps:
     - id: step_00
@@ -124,7 +91,7 @@ workflow:
       description: "Review and improve repository documentation against the live file set"
       enabled: true
       dependencies:
-        - step_00
+        - step_0b
 
     - id: step_01_5
       name: "Copilot Instructions Validation"
@@ -180,35 +147,30 @@ workflow:
       description: "Review test suite (none in this repository)"
       enabled: false
       reason: "No test suite is configured in this documentation-only repository"
-      dependencies: []
 
     - id: step_07
       name: "Test Generation"
       description: "Generate tests (not applicable)"
       enabled: false
       reason: "No source code or test harness is present"
-      dependencies: []
 
     - id: step_08
       name: "Test Execution"
       description: "Run tests (not applicable)"
       enabled: false
       reason: "No test commands are configured"
-      dependencies: []
 
     - id: step_09
       name: "Dependency Analysis"
       description: "Analyze package dependencies (not applicable)"
       enabled: false
       reason: "No package manager or runtime dependency graph is present"
-      dependencies: []
 
     - id: step_10
       name: "Code Quality"
       description: "Run source-code quality analysis (not applicable)"
       enabled: false
       reason: "The repository currently contains documentation templates, not source code"
-      dependencies: []
 
     - id: step_11
       name: "Context Management"
@@ -217,12 +179,17 @@ workflow:
       dependencies:
         - step_13
 
+    - id: step_11_6
+      name: "AWS Serverless Review"
+      enabled: false
+      reason: "Not applicable — non-AWS, documentation-only repository"
+
     - id: step_12
       name: "Git Finalization"
       description: "Finalize git state after a workflow run"
       enabled: true
       dependencies:
-        - step_17
+        - step_0f
 
     - id: step_13
       name: "Markdown Linting"
@@ -230,69 +197,64 @@ workflow:
       enabled: true
       dependencies:
         - step_01
+      dependency_comment: "steps 06-10 disabled (docs-only repo, no source code); markdown lint depends on doc updates (step_01) as the prior active content step in this branch"
 
     - id: step_14
       name: "Prompt Engineering"
       description: "Prompt optimization (not applicable)"
       enabled: false
       reason: "This repository stores reusable guides, not prompt systems"
-      dependencies: []
 
     - id: step_15
       name: "UX Analysis"
       description: "UX review (not applicable)"
       enabled: false
       reason: "No UI layer is present"
-      dependencies: []
 
     - id: step_16
       name: "Version Update"
       description: "Version update (not currently used)"
       enabled: false
       reason: "No version-managed build or release file is configured in this repo"
-      dependencies: []
 
     - id: step_17
       name: "Workflow Summary"
       description: "Generate a workflow summary for documentation-focused runs"
       enabled: true
       dependencies:
+        - step_03
         - step_11
+      dependency_comment: "step_11_6, step_20, step_23 disabled in this docs-only non-AWS repo; step_17 aggregates step_03 (script refs) and step_11 (context management) as the final enabled convergence points"
 
     - id: step_18
       name: "Debugging Analysis"
       description: "Debugging review (not applicable)"
       enabled: false
       reason: "No executable runtime or code path debugging applies here"
-      dependencies: []
 
     - id: step_19
       name: "TypeScript Review"
       description: "TypeScript review (not applicable)"
       enabled: false
       reason: "No TypeScript sources are present"
-      dependencies: []
 
     - id: step_20
       name: "Async Performance Review"
       description: "Async performance review (not applicable)"
       enabled: false
       reason: "No async runtime code is present"
-      dependencies: []
 
     - id: step_22
       name: "Accessibility Review"
       description: "Accessibility review (not applicable)"
       enabled: false
       reason: "The repository has no HTML/CSS or rendered UI surface"
-      dependencies: []
 
     - id: step_23
       name: "Performance Review"
       description: "Performance review (not applicable)"
       enabled: false
       reason: "There is no executable application surface to benchmark"
-      dependencies: []
 
 linting:
   md_linter: "none"
