@@ -13,6 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | File | Subject |
 |------|---------|
 | `HIGH_COHESION_GUIDE.md` | Single-responsibility design principle |
+| `LIGHTWEIGHT_DDD_GUIDE.md` | Pragmatic Domain-Driven Design guidance |
 | `LOW_COUPLING_GUIDE.md` | Explicit, minimal dependency design |
 | `MOBILE_FIRST_GUIDE.md` | Mobile-first interface design |
 | `REFERENTIAL_TRANSPARENCY.md` | Deterministic, side-effect-contained design |
@@ -86,6 +87,7 @@ step_overrides:
       eligible_docs:
         - README.md
         - HIGH_COHESION_GUIDE.md
+        - LIGHTWEIGHT_DDD_GUIDE.md
         - LOW_COUPLING_GUIDE.md
         - MOBILE_FIRST_GUIDE.md
         - REFERENTIAL_TRANSPARENCY.md

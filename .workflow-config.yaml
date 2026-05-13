@@ -27,6 +27,7 @@ structure:
   key_docs:
     - README.md
     - HIGH_COHESION_GUIDE.md
+    - LIGHTWEIGHT_DDD_GUIDE.md
     - LOW_COUPLING_GUIDE.md
     - MOBILE_FIRST_GUIDE.md
     - REFERENTIAL_TRANSPARENCY.md
@@ -274,6 +275,7 @@ step_overrides:
       eligible_docs:
         - README.md
         - HIGH_COHESION_GUIDE.md
+        - LIGHTWEIGHT_DDD_GUIDE.md
         - LOW_COUPLING_GUIDE.md
         - MOBILE_FIRST_GUIDE.md
         - REFERENTIAL_TRANSPARENCY.md
