@@ -11,6 +11,7 @@ changes, not as a replacement for the architecture and design guides.
 
 Use this guide together with:
 
+- [Clean Architecture Guide](./CLEAN_ARCHITECTURE_GUIDE.md)
 - [High Cohesion Guide](./HIGH_COHESION_GUIDE.md)
 - [Low Coupling Guide](./LOW_COUPLING_GUIDE.md)
 - [Referential Transparency Guide](./REFERENTIAL_TRANSPARENCY.md)
@@ -76,7 +77,26 @@ Every substantive code change should satisfy these gates.
 - Cross-link to related design guides instead of restating them.
 - Call out intentional breaking cleanup in `CHANGELOG.md`.
 
-### 7. Validation gate
+### 7. Architecture gate
+
+See [Clean Architecture Guide](./CLEAN_ARCHITECTURE_GUIDE.md) for the full layer
+reference. The key checks at review time:
+
+- Dependencies must point inward. No inner-layer file (domain, use case) may
+  import from an outer layer (adapters, infrastructure, frameworks).
+- Domain and use-case files must be free of framework, database, SDK, and
+  transport imports.
+- Use-case logic should delegate all I/O through interfaces or ports defined
+  in the inner layers, not by constructing infrastructure dependencies
+  directly.
+- Adapter translation code must stay at the boundary; it must not leak into
+  domain types or use-case files.
+- Infrastructure wiring (HTTP, database clients, SDKs, DI containers) belongs
+  in the outermost layer or composition root only.
+- Domain and use-case logic should be exercisable in tests without starting a
+  server or opening a real database connection.
+
+### 8. Validation gate
 
 Run the repository validation commands for substantive code changes. Typical
 examples:
@@ -97,6 +117,11 @@ Adapt these to the project's actual toolchain.
 - [ ] Tests cover the changed boundary and any newly extracted critical helper.
 - [ ] Docs and changelog reflect any meaningful API or behavior change.
 - [ ] Repository validation commands still pass.
+- [ ] No inner-layer file (domain, use case) imports from an outer layer.
+- [ ] Domain and use-case files have no framework, database, or SDK imports.
+- [ ] Use-case logic delegates I/O through inner-layer interfaces, not by constructing infrastructure directly.
+- [ ] Adapter translation code does not leak into domain types or use-case logic.
+- [ ] Infrastructure wiring is confined to the outermost layer or composition root.
 
 ## Summary
 
