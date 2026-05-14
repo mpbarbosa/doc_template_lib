@@ -280,4 +280,5 @@ step_overrides:
         - MOBILE_FIRST_GUIDE.md
         - REFERENTIAL_TRANSPARENCY.md
         - CLEAN_ARCHITECTURE_GUIDE.md
+        - CODE_QUALITY_CONTROL_GUIDE.md
         - .github/copilot-instructions.md
