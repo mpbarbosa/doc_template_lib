@@ -279,4 +279,5 @@ step_overrides:
         - LOW_COUPLING_GUIDE.md
         - MOBILE_FIRST_GUIDE.md
         - REFERENTIAL_TRANSPARENCY.md
+        - CLEAN_ARCHITECTURE_GUIDE.md
         - .github/copilot-instructions.md
