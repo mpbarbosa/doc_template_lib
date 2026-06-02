@@ -258,11 +258,11 @@ harder to understand than the problem warrants.
 
 ## Related Guides
 
-- [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md) for keeping each module or
+- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md) for keeping each module or
   document focused on one clear responsibility.
-- [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for keeping context
+- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md) for keeping context
   boundaries explicit and dependency direction clean.
-- [REFERENTIAL_TRANSPARENCY.md](./REFERENTIAL_TRANSPARENCY.md) for separating
+- [REFERENTIAL_TRANSPARENCY.md](../code_quality/REFERENTIAL_TRANSPARENCY.md) for separating
   policy-rich pure logic from side-effecting boundaries.
 
 ## Summary Checklist

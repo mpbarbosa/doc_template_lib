@@ -3,7 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-- Initial release of reusable Markdown guide templates.
+- Added UNIT_TEST_GUIDE.md as a reusable unit-testing template.
+- Synced guide inventories to include CLEAN_ARCHITECTURE_GUIDE.md and
+  CODE_QUALITY_CONTROL_GUIDE.md consistently across repository docs.
 
 ## [1.0.0] - 2026-05-13
 - Added HIGH_COHESION_GUIDE.md

@@ -6,7 +6,9 @@
 
 - Actionable, single-principle Markdown guides
 - Cross-referenced documentation to avoid duplication
-- Ready-to-use templates for high-cohesion, low-coupling, DDD, mobile-first, and referential transparency
+- Ready-to-use templates for clean architecture, code quality control,
+  high cohesion, low coupling, lightweight DDD, mobile-first design,
+  referential transparency, and unit testing
 - Consistent structure and style for easy integration
 
 ## Getting Started

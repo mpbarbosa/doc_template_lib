@@ -12,14 +12,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 | File | Subject |
 |------|---------|
-| `HIGH_COHESION_GUIDE.md` | Single-responsibility design principle |
-| `LIGHTWEIGHT_DDD_GUIDE.md` | Pragmatic Domain-Driven Design guidance |
-| `LOW_COUPLING_GUIDE.md` | Explicit, minimal dependency design |
-| `MOBILE_FIRST_GUIDE.md` | Mobile-first interface design |
-| `REFERENTIAL_TRANSPARENCY.md` | Deterministic, side-effect-contained design |
+| `domain_specific/DOMAIN_DESIGN_CONTROL_GUIDE.md` | Domain model, API, and interface change-review guidance |
+| `domain_specific/LIGHTWEIGHT_DDD_GUIDE.md` | Pragmatic Domain-Driven Design guidance |
+| `domain_specific/DDD_GUIDE.md` | Full Domain-Driven Design methodology (strategic + tactical) |
+| `domain_specific/MOBILE_FIRST_GUIDE.md` | Mobile-first interface design |
+| `domain_specific/REST_API_GUIDE.md` | Resource-oriented HTTP API design guidance |
+| `code_quality/HIGH_COHESION_GUIDE.md` | Single-responsibility design principle |
+| `code_quality/LOW_COUPLING_GUIDE.md` | Explicit, minimal dependency design |
+| `code_quality/REFERENTIAL_TRANSPARENCY.md` | Deterministic, side-effect-contained design |
+| `code_quality/CLEAN_ARCHITECTURE_GUIDE.md` | Layered dependency-direction guidance |
+| `code_quality/DRY_GUIDE.md` | Single-source-of-truth and duplication-avoidance guidance |
+| `code_quality/CODE_QUALITY_CONTROL_GUIDE.md` | Change-quality and boundary review guidance |
+| `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
+| `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
+| `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
 | `.github/copilot-instructions.md` | Durable Copilot guidance for this repo |
 
 There are no build, lint, or test commands to run.
+
+**Repository meta-docs** (not reusable guides — scoped to this repo only):
+
+| File | Purpose |
+|------|---------|
+| `CHANGELOG.md` | Release history |
+| `docs/ARCHITECTURE.md` | Repo structure and design rationale |
+| `docs/CONTRIBUTING.md` | Contribution guidelines |
+| `docs/GETTING_STARTED.md` | Quick-start for consumers |
+| `docs/API.md` | Guide consumption API reference |
 
 ---
 
@@ -91,6 +110,12 @@ step_overrides:
         - LOW_COUPLING_GUIDE.md
         - MOBILE_FIRST_GUIDE.md
         - REFERENTIAL_TRANSPARENCY.md
+        - CLEAN_ARCHITECTURE_GUIDE.md
+        - CODE_QUALITY_CONTROL_GUIDE.md
+        - UNIT_TEST_GUIDE.md
+        - DRY_GUIDE.md
+        - DDD_GUIDE.md
+        - INTEGRATION_TEST_GUIDE.md
         - .github/copilot-instructions.md
 ```
 

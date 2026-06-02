@@ -9,10 +9,13 @@ This repository contains only Markdown documentation templates and does not expo
 
 ## Available Guides
 
+- CLEAN_ARCHITECTURE_GUIDE.md
+- CODE_QUALITY_CONTROL_GUIDE.md
 - HIGH_COHESION_GUIDE.md
 - LIGHTWEIGHT_DDD_GUIDE.md
 - LOW_COUPLING_GUIDE.md
 - MOBILE_FIRST_GUIDE.md
 - REFERENTIAL_TRANSPARENCY.md
+- UNIT_TEST_GUIDE.md
 
 For details on each guide, see the respective Markdown file at the repository root.

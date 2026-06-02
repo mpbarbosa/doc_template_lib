@@ -578,8 +578,8 @@ screens?
 
 ## Related Guides
 
-- [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md)
-- [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md)
+- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md)
+- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md)
 
 ## Summary Checklist
 

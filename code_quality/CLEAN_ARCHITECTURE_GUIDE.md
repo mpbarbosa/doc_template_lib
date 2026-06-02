@@ -209,7 +209,7 @@ is not clean.
   focused on one clear responsibility within its layer.
 - [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for keeping dependencies
   explicit and directional boundaries enforced.
-- [LIGHTWEIGHT_DDD_GUIDE.md](./LIGHTWEIGHT_DDD_GUIDE.md) for naming core domain
+- [LIGHTWEIGHT_DDD_GUIDE.md](../domain_specific/LIGHTWEIGHT_DDD_GUIDE.md) for naming core domain
   concepts and separating policy logic from infrastructure.
 - [REFERENTIAL_TRANSPARENCY.md](./REFERENTIAL_TRANSPARENCY.md) for keeping
   domain and use-case logic side-effect-free and testable.
