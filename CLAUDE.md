@@ -26,6 +26,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
 | `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
 | `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
+| `frontend/REACT_GUIDE.md` | React component design, state, hooks, and data-flow guidance |
 | `.github/copilot-instructions.md` | Durable Copilot guidance for this repo |
 
 There are no build, lint, or test commands to run.
@@ -105,17 +106,20 @@ step_overrides:
     task_scope:
       eligible_docs:
         - README.md
-        - HIGH_COHESION_GUIDE.md
-        - LIGHTWEIGHT_DDD_GUIDE.md
-        - LOW_COUPLING_GUIDE.md
-        - MOBILE_FIRST_GUIDE.md
-        - REFERENTIAL_TRANSPARENCY.md
-        - CLEAN_ARCHITECTURE_GUIDE.md
-        - CODE_QUALITY_CONTROL_GUIDE.md
-        - UNIT_TEST_GUIDE.md
-        - DRY_GUIDE.md
-        - DDD_GUIDE.md
-        - INTEGRATION_TEST_GUIDE.md
+        - domain_specific/DOMAIN_DESIGN_CONTROL_GUIDE.md
+        - domain_specific/LIGHTWEIGHT_DDD_GUIDE.md
+        - domain_specific/DDD_GUIDE.md
+        - domain_specific/MOBILE_FIRST_GUIDE.md
+        - domain_specific/REST_API_GUIDE.md
+        - code_quality/HIGH_COHESION_GUIDE.md
+        - code_quality/LOW_COUPLING_GUIDE.md
+        - code_quality/REFERENTIAL_TRANSPARENCY.md
+        - code_quality/CLEAN_ARCHITECTURE_GUIDE.md
+        - code_quality/DRY_GUIDE.md
+        - code_quality/CODE_QUALITY_CONTROL_GUIDE.md
+        - code_quality/UNIT_TEST_GUIDE.md
+        - code_quality/INTEGRATION_TEST_GUIDE.md
+        - code_quality/E2E_TEST_GUIDE.md
         - .github/copilot-instructions.md
 ```
 
@@ -123,7 +127,7 @@ step_overrides:
 
 ## Adding a New Guide
 
-1. Create `<NAME>_GUIDE.md` at the repository root.
+1. Create `<NAME>_GUIDE.md` in the suited folder: `code_quality/` for general programming principles, `domain_specific/` for domain-model / API / platform topics, `frontend/` for UI framework and browser-platform guidance. Create a new folder if none of these fit.
 2. Mirror the structure of an existing guide (goal → definition → why it matters → signals/checklists).
 3. Add it to `step_overrides.step_01.task_scope.eligible_docs` in `.workflow-config.yaml`.
 4. Cross-reference it from related existing guides rather than duplicating shared content.

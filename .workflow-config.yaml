@@ -6,7 +6,7 @@ project:
   type: "configuration-library"
   description: "Reusable Markdown guide templates for architecture and AI-assisted development conventions"
   kind: "configuration_library"
-  version: "1.0.0"
+  version: "1.1.0"
 
 tech_stack:
   primary_language: "markdown"
@@ -26,6 +26,7 @@ structure:
     - ".github"
     - "code_quality"
     - "domain_specific"
+    - "frontend"
   key_docs:
     - README.md
     - domain_specific/DOMAIN_DESIGN_CONTROL_GUIDE.md
@@ -42,6 +43,7 @@ structure:
     - code_quality/UNIT_TEST_GUIDE.md
     - code_quality/INTEGRATION_TEST_GUIDE.md
     - code_quality/E2E_TEST_GUIDE.md
+    - frontend/REACT_GUIDE.md
     - .github/copilot-instructions.md
 
 version:
@@ -299,4 +301,5 @@ step_overrides:
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md
+        - frontend/REACT_GUIDE.md
         - .github/copilot-instructions.md
