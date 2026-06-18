@@ -216,6 +216,10 @@ their consumers.
 
 ## Related Guides
 
+- [CLAUDE_CODE_WORKFLOW_GUIDE.md](./CLAUDE_CODE_WORKFLOW_GUIDE.md) — session
+  discipline for the Claude Code session that declares and implements the
+  interface; contract-first declaration is the first stage of any well-formed
+  session.
 - [CLEAN_ARCHITECTURE_GUIDE.md](./CLEAN_ARCHITECTURE_GUIDE.md) for the
   principle that interfaces belong to inner layers, not the outer layers that
   implement them.

@@ -216,6 +216,28 @@ produce output that looks like what was asked for but may not be correct.
 Describe behavior; let Claude choose implementation. Review the diff to
 confirm the behavior is right.
 
+## Review Heuristics
+
+### Single-Concern Scope Test
+
+Does the session's stated task fit in one sentence without "and"? A task that requires "and" is two sessions or two sequential commits. If the prompt that started this session cannot be stated without "and," the scope was not declared clearly enough before starting.
+
+### Tool Call Scope Test
+
+Do the files touched by a pending write or edit match only what the stated concern requires? A write touching more files than the task demands is a signal to redirect before approving. Check the description before each write tool call.
+
+### Verification-Before-Commit Test
+
+Was the verification command defined before the change was generated, and has it passed before this commit is approved? A commit made before verification passes is an unverified foundation for everything that follows in the next session.
+
+### Commit Message Test
+
+Does the commit message describe one concern without "and"? A message that requires "and" is two commits. If "and" is present, the commit is mixing scope that should be separated and committed independently.
+
+### CLAUDE.md Currency Test
+
+Does the per-directory CLAUDE.md describe the current module layout, patterns, and referenced guides? A CLAUDE.md that describes a refactored or renamed module will silently mislead every future session that reads it. Apply this test whenever a session changes module boundaries or introduces a new pattern type.
+
 ## Positive Signals
 
 - Each session addresses one concern with one verification gate.

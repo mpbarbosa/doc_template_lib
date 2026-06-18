@@ -205,6 +205,9 @@ these to the project's actual toolchain:
 
 ## Related Guides
 
+- [CLAUDE_CODE_WORKFLOW_GUIDE.md](./CLAUDE_CODE_WORKFLOW_GUIDE.md) — session
+  discipline for the Claude Code sessions that quality control gates are applied
+  to; the verification-before-commit rule governs when these gates run.
 - [INCREMENTAL_CHANGE_GUIDE.md](./INCREMENTAL_CHANGE_GUIDE.md) for structuring
   AI-assisted changes so each one is verifiable independently — incremental
   change is the workflow that makes quality control gates effective.

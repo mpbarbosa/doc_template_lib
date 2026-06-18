@@ -220,6 +220,9 @@ codebase without a glossary? If not, expand the abbreviation.
 
 ## Related Guides
 
+- [CLAUDE_CODE_WORKFLOW_GUIDE.md](./CLAUDE_CODE_WORKFLOW_GUIDE.md) — session
+  discipline for the Claude Code sessions that generate named symbols; precise
+  names reduce prompt ambiguity and correction loops during generation.
 - [LLM_CONTEXT_GUIDE.md](./LLM_CONTEXT_GUIDE.md) for naming as a
   context-compression strategy and its effect on LLM context efficiency.
 - [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md) for the relationship

@@ -221,6 +221,10 @@ together after the fact.
 
 ## Related Guides
 
+- [CLAUDE_CODE_WORKFLOW_GUIDE.md](./CLAUDE_CODE_WORKFLOW_GUIDE.md) —
+  session-level discipline for the Claude Code sessions that execute incremental
+  changes: scope declaration, tool-call review, verification gates, and course
+  correction. The session-level complement to this structural guide.
 - [INTERFACE_FIRST_GUIDE.md](./INTERFACE_FIRST_GUIDE.md) for the first stage
   of the stacked change pattern — declare the contract before generating any
   implementation.

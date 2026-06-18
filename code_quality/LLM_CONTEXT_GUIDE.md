@@ -211,6 +211,9 @@ from itself alone.
 
 ## Related Guides
 
+- [CLAUDE_CODE_WORKFLOW_GUIDE.md](./CLAUDE_CODE_WORKFLOW_GUIDE.md) — session
+  discipline for the Claude Code sessions that consume context-efficient code;
+  well-structured code reduces the surface area each session must reason about.
 - [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md) for the
   single-responsibility principle that produces low-cost context units.
 - [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for sparse import graphs
