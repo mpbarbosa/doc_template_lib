@@ -28,6 +28,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `code_quality/INTERFACE_FIRST_GUIDE.md` | Contract-first design — define interfaces before implementations |
 | `code_quality/NAMING_GUIDE.md` | Naming conventions for symbols, files, and tests |
 | `code_quality/ERROR_HANDLING_GUIDE.md` | Error classification, propagation, and contract declaration |
+| `code_quality/DEFENSIVE_CODING_GUIDE.md` | Boundary validation, invariant assertions, and fail-fast design |
+| `code_quality/OBSERVABILITY_GUIDE.md` | Structured logs, metrics, and distributed traces for production visibility |
 | `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
 | `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
 | `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
@@ -127,6 +129,8 @@ step_overrides:
         - code_quality/INTERFACE_FIRST_GUIDE.md
         - code_quality/NAMING_GUIDE.md
         - code_quality/ERROR_HANDLING_GUIDE.md
+        - code_quality/DEFENSIVE_CODING_GUIDE.md
+        - code_quality/OBSERVABILITY_GUIDE.md
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md

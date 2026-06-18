@@ -400,6 +400,12 @@ integration suite.
   domain logic.
 - [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for designing boundaries
   that are easy to substitute in test environments.
+- [OBSERVABILITY_GUIDE.md](./OBSERVABILITY_GUIDE.md) for verifying that
+  structured log entries and metrics are emitted correctly under real boundary
+  conditions — integration tests are the right level for observability
+  assertions.
+- [DEFENSIVE_CODING_GUIDE.md](./DEFENSIVE_CODING_GUIDE.md) for testing that
+  system boundary validation correctly rejects every invalid input class.
 
 ## Summary Checklist
 

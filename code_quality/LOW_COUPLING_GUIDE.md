@@ -194,6 +194,16 @@ instead of referenced from one source?
 6. Replace repeated documentation blocks with focused source documents and
    cross-links.
 
+## Related Guides
+
+- [INTERFACE_FIRST_GUIDE.md](./INTERFACE_FIRST_GUIDE.md) for declaring the
+  stable abstractions that replace direct implementation dependencies.
+- [DEFENSIVE_CODING_GUIDE.md](./DEFENSIVE_CODING_GUIDE.md) for the
+  "parse, don't validate" pattern — typed domain values reduce coupling between
+  layers caused by passing raw inputs through multiple components.
+- [CLEAN_ARCHITECTURE_GUIDE.md](./CLEAN_ARCHITECTURE_GUIDE.md) for
+  formalizing coupling direction across architectural layers.
+
 ## Summary Checklist
 
 - [ ] The component depends on the narrowest stable abstraction available.

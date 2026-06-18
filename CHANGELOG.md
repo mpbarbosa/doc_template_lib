@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-06-17
+- Added code_quality/DEFENSIVE_CODING_GUIDE.md — boundary validation,
+  invariant assertions, and fail-fast design (Phase 2 of AI code quality
+  roadmap)
+- Added code_quality/OBSERVABILITY_GUIDE.md — structured logs, metrics, and
+  distributed traces for production visibility
+- Cross-referenced new guides from LOW_COUPLING_GUIDE and
+  INTEGRATION_TEST_GUIDE
+
 ## [1.3.0] - 2026-06-17
 - Added code_quality/INTERFACE_FIRST_GUIDE.md — contract-first design before
   implementation (Phase 1 of AI-supported code quality roadmap)
