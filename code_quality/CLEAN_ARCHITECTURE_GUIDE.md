@@ -213,6 +213,11 @@ is not clean.
   concepts and separating policy logic from infrastructure.
 - [REFERENTIAL_TRANSPARENCY.md](./REFERENTIAL_TRANSPARENCY.md) for keeping
   domain and use-case logic side-effect-free and testable.
+- [INTERFACE_FIRST_GUIDE.md](./INTERFACE_FIRST_GUIDE.md) for defining ports and
+  interfaces in the inner layer before the outer layer that implements them.
+- [ERROR_HANDLING_GUIDE.md](./ERROR_HANDLING_GUIDE.md) for wrapping
+  infrastructure errors at adapter boundaries and keeping domain interfaces
+  clean of infrastructure error types.
 
 ## Summary Checklist
 

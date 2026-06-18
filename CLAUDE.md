@@ -25,6 +25,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `code_quality/DRY_GUIDE.md` | Single-source-of-truth and duplication-avoidance guidance |
 | `code_quality/CODE_QUALITY_CONTROL_GUIDE.md` | Change-quality and boundary review guidance |
 | `code_quality/LLM_CONTEXT_GUIDE.md` | Code structure for LLM context window efficiency |
+| `code_quality/INTERFACE_FIRST_GUIDE.md` | Contract-first design — define interfaces before implementations |
+| `code_quality/NAMING_GUIDE.md` | Naming conventions for symbols, files, and tests |
+| `code_quality/ERROR_HANDLING_GUIDE.md` | Error classification, propagation, and contract declaration |
 | `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
 | `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
 | `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
@@ -121,6 +124,9 @@ step_overrides:
         - code_quality/DRY_GUIDE.md
         - code_quality/CODE_QUALITY_CONTROL_GUIDE.md
         - code_quality/LLM_CONTEXT_GUIDE.md
+        - code_quality/INTERFACE_FIRST_GUIDE.md
+        - code_quality/NAMING_GUIDE.md
+        - code_quality/ERROR_HANDLING_GUIDE.md
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md

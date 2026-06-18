@@ -316,6 +316,10 @@ pagination? If yes, the endpoint is a latency and reliability risk at scale.
   handler focused on one resource operation.
 - [INTEGRATION_TEST_GUIDE.md](../code_quality/INTEGRATION_TEST_GUIDE.md) for testing API
   adapters against real HTTP boundaries rather than mocking the transport layer.
+- [ERROR_HANDLING_GUIDE.md](../code_quality/ERROR_HANDLING_GUIDE.md) for classifying
+  and typing errors before translating them into HTTP error response shapes.
+- [INTERFACE_FIRST_GUIDE.md](../code_quality/INTERFACE_FIRST_GUIDE.md) for declaring
+  request and response contracts before implementing endpoint handlers.
 
 ## Summary Checklist
 

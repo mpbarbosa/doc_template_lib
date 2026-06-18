@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-06-17
+- Added code_quality/INTERFACE_FIRST_GUIDE.md — contract-first design before
+  implementation (Phase 1 of AI-supported code quality roadmap)
+- Added code_quality/NAMING_GUIDE.md — naming conventions for symbols, files,
+  and tests across all layers
+- Added code_quality/ERROR_HANDLING_GUIDE.md — error classification,
+  propagation rules, and contract declaration
+- Cross-referenced new guides from CLEAN_ARCHITECTURE_GUIDE, UNIT_TEST_GUIDE,
+  and REST_API_GUIDE
+
 ## [1.2.0] - 2026-06-17
 - Added domain_specific/NODE_MODULE_GUIDE.md — layered Node.js module structure
   and dependency-direction guidance (imported and adapted from ibira.js)

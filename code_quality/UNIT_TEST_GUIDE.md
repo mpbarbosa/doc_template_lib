@@ -13,6 +13,8 @@ Use this guide together with:
 - [Referential Transparency Guide](./REFERENTIAL_TRANSPARENCY.md)
 - [High Cohesion Guide](./HIGH_COHESION_GUIDE.md)
 - [Low Coupling Guide](./LOW_COUPLING_GUIDE.md)
+- [Interface-First Guide](./INTERFACE_FIRST_GUIDE.md)
+- [Error Handling Guide](./ERROR_HANDLING_GUIDE.md)
 
 ## Goal
 
