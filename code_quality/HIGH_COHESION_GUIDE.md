@@ -181,6 +181,18 @@ may already contain multiple responsibilities.
 4. Replace generic helper buckets with purpose-specific modules.
 5. Split broad documents into focused guides with clear cross-links.
 
+## Related Guides
+
+- [SOLID_GUIDE.md](./SOLID_GUIDE.md) for the Single Responsibility Principle
+  as part of the broader SOLID framework — including the actor analysis that
+  identifies when a module has more than one reason to change.
+- [INTERFACE_FIRST_GUIDE.md](./INTERFACE_FIRST_GUIDE.md) for applying
+  single-responsibility thinking at the interface boundary — a contract that
+  serves multiple client roles has mixed responsibilities.
+- [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for the complementary
+  principle — high cohesion within modules and low coupling between them
+  reinforce each other.
+
 ## Summary Checklist
 
 - [ ] The file or document has one primary concern.

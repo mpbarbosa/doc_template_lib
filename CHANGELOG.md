@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-06-17
+- Added code_quality/SOLID_GUIDE.md — five SOLID principles with full coverage
+  of OCP, LSP, and ISP; cross-references for SRP and DIP (Phase 3 of AI code
+  quality roadmap)
+- Added code_quality/INCREMENTAL_CHANGE_GUIDE.md — stacked change pattern and
+  single-concern verification workflow for AI-assisted development
+- Cross-referenced new guides from HIGH_COHESION_GUIDE, CODE_QUALITY_CONTROL_GUIDE,
+  and INTERFACE_FIRST_GUIDE
+
 ## [1.4.0] - 2026-06-17
 - Added code_quality/DEFENSIVE_CODING_GUIDE.md — boundary validation,
   invariant assertions, and fail-fast design (Phase 2 of AI code quality

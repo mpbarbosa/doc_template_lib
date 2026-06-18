@@ -227,6 +227,10 @@ their consumers.
   contract conformance rather than implementation details.
 - [DEFENSIVE_CODING_GUIDE.md](./DEFENSIVE_CODING_GUIDE.md) for enforcing
   preconditions at the interface boundary at runtime.
+- [SOLID_GUIDE.md](./SOLID_GUIDE.md) for Interface Segregation — the
+  principle that each interface should serve one client role — and for
+  Liskov Substitution, which governs the behavioral contracts that
+  implementations must honor.
 
 ## Summary Checklist
 

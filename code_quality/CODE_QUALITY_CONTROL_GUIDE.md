@@ -203,6 +203,18 @@ these to the project's actual toolchain:
 - An inner-layer file imports from a framework, database client, or SDK.
 - Infrastructure wiring is spread across domain or use-case files.
 
+## Related Guides
+
+- [INCREMENTAL_CHANGE_GUIDE.md](./INCREMENTAL_CHANGE_GUIDE.md) for structuring
+  AI-assisted changes so each one is verifiable independently — incremental
+  change is the workflow that makes quality control gates effective.
+- [SOLID_GUIDE.md](./SOLID_GUIDE.md) for the structural principles that make
+  quality control reviewable — SOLID-compliant code has clear extension points,
+  stable interfaces, and predictable change patterns.
+- [INTERFACE_FIRST_GUIDE.md](./INTERFACE_FIRST_GUIDE.md) for the contract
+  review gate — the interface is the specification that quality control checks
+  each change against.
+
 ## Summary Checklist
 
 - [ ] The change belongs to the correct module boundary.
