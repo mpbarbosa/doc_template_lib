@@ -17,12 +17,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `domain_specific/DDD_GUIDE.md` | Full Domain-Driven Design methodology (strategic + tactical) |
 | `domain_specific/MOBILE_FIRST_GUIDE.md` | Mobile-first interface design |
 | `domain_specific/REST_API_GUIDE.md` | Resource-oriented HTTP API design guidance |
+| `domain_specific/NODE_MODULE_GUIDE.md` | Layered Node.js module structure and dependency-direction guidance |
 | `code_quality/HIGH_COHESION_GUIDE.md` | Single-responsibility design principle |
 | `code_quality/LOW_COUPLING_GUIDE.md` | Explicit, minimal dependency design |
 | `code_quality/REFERENTIAL_TRANSPARENCY.md` | Deterministic, side-effect-contained design |
 | `code_quality/CLEAN_ARCHITECTURE_GUIDE.md` | Layered dependency-direction guidance |
 | `code_quality/DRY_GUIDE.md` | Single-source-of-truth and duplication-avoidance guidance |
 | `code_quality/CODE_QUALITY_CONTROL_GUIDE.md` | Change-quality and boundary review guidance |
+| `code_quality/LLM_CONTEXT_GUIDE.md` | Code structure for LLM context window efficiency |
 | `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
 | `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
 | `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
@@ -111,15 +113,18 @@ step_overrides:
         - domain_specific/DDD_GUIDE.md
         - domain_specific/MOBILE_FIRST_GUIDE.md
         - domain_specific/REST_API_GUIDE.md
+        - domain_specific/NODE_MODULE_GUIDE.md
         - code_quality/HIGH_COHESION_GUIDE.md
         - code_quality/LOW_COUPLING_GUIDE.md
         - code_quality/REFERENTIAL_TRANSPARENCY.md
         - code_quality/CLEAN_ARCHITECTURE_GUIDE.md
         - code_quality/DRY_GUIDE.md
         - code_quality/CODE_QUALITY_CONTROL_GUIDE.md
+        - code_quality/LLM_CONTEXT_GUIDE.md
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md
+        - frontend/REACT_GUIDE.md
         - .github/copilot-instructions.md
 ```
 
@@ -129,6 +134,7 @@ step_overrides:
 
 1. Create `<NAME>_GUIDE.md` in the suited folder: `code_quality/` for general programming principles, `domain_specific/` for domain-model / API / platform topics, `frontend/` for UI framework and browser-platform guidance. Create a new folder if none of these fit.
 2. Mirror the structure of an existing guide (goal → definition → why it matters → signals/checklists).
-3. Add it to `step_overrides.step_01.task_scope.eligible_docs` in `.workflow-config.yaml`.
+3. Add it to `step_overrides.step_01.task_scope.eligible_docs` in `.workflow-config.yaml` (and keep the example in this file in sync).
 4. Cross-reference it from related existing guides rather than duplicating shared content.
-5. Run `ai-workflow run --stage quick` to validate consistency and config.
+5. Update the guide table in this file (`CLAUDE.md`) and the `version` field in `.workflow-config.yaml` (minor bump), then record the addition in `CHANGELOG.md`.
+6. Run `ai-workflow run --stage quick` to validate consistency and config.
