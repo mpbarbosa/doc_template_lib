@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-06-18
+- Added meta/GUIDE_AUTHORING_GUIDE.md — how to plan, write, structure, and
+  register a new guide in this library; covers folder placement, canonical
+  section order, writing style rules, registration steps, and review heuristics
+
+## [1.6.0] - 2026-06-18
+- Added code_quality/CLAUDE_CODE_WORKFLOW_GUIDE.md — Claude Code session
+  discipline: pre-session scoping, prompt construction, tool-call review,
+  verification by layer, commit discipline, and course correction; imported
+  and adapted from sysupdate project guide
+
 ## [1.5.0] - 2026-06-17
 - Added code_quality/SOLID_GUIDE.md — five SOLID principles with full coverage
   of OCP, LSP, and ISP; cross-references for SRP and DIP (Phase 3 of AI code

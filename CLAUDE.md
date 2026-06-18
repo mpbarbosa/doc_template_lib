@@ -32,11 +32,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `code_quality/OBSERVABILITY_GUIDE.md` | Structured logs, metrics, and distributed traces for production visibility |
 | `code_quality/SOLID_GUIDE.md` | Five SOLID design principles with emphasis on OCP, LSP, and ISP |
 | `code_quality/INCREMENTAL_CHANGE_GUIDE.md` | Structuring AI-assisted work into single-concern, verifiable changes |
+| `code_quality/CLAUDE_CODE_WORKFLOW_GUIDE.md` | Claude Code session discipline — scope, verification, tool-call review, and course correction |
 | `code_quality/UNIT_TEST_GUIDE.md` | Fast, isolated, deterministic unit-testing guidance |
 | `code_quality/INTEGRATION_TEST_GUIDE.md` | Multi-component, real-boundary integration testing guidance |
 | `code_quality/E2E_TEST_GUIDE.md` | Full-stack, user-visible end-to-end testing guidance |
 | `frontend/REACT_GUIDE.md` | React component design, state, hooks, and data-flow guidance |
 | `.github/copilot-instructions.md` | Durable Copilot guidance for this repo |
+| `meta/GUIDE_AUTHORING_GUIDE.md` | How to plan, write, structure, and register a new guide in this library |
 
 There are no build, lint, or test commands to run.
 
@@ -135,6 +137,8 @@ step_overrides:
         - code_quality/OBSERVABILITY_GUIDE.md
         - code_quality/SOLID_GUIDE.md
         - code_quality/INCREMENTAL_CHANGE_GUIDE.md
+        - code_quality/CLAUDE_CODE_WORKFLOW_GUIDE.md
+        - meta/GUIDE_AUTHORING_GUIDE.md
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md

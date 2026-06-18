@@ -6,7 +6,7 @@ project:
   type: "configuration-library"
   description: "Reusable Markdown guide templates for architecture and AI-assisted development conventions"
   kind: "configuration_library"
-  version: "1.5.0"
+  version: "1.7.0"
 
 tech_stack:
   primary_language: "markdown"
@@ -316,6 +316,8 @@ step_overrides:
         - code_quality/OBSERVABILITY_GUIDE.md
         - code_quality/SOLID_GUIDE.md
         - code_quality/INCREMENTAL_CHANGE_GUIDE.md
+        - code_quality/CLAUDE_CODE_WORKFLOW_GUIDE.md
+        - meta/GUIDE_AUTHORING_GUIDE.md
         - code_quality/UNIT_TEST_GUIDE.md
         - code_quality/INTEGRATION_TEST_GUIDE.md
         - code_quality/E2E_TEST_GUIDE.md
