@@ -4,9 +4,12 @@ Thank you for your interest in contributing!
 
 ## How to Contribute
 
-- **Add New Guides:** Each new guide must focus on a single principle or subject. Follow the structure and style of existing guides.
-- **Update Existing Guides:** Improve clarity, fix errors, or update for accuracy. Avoid duplicating content—cross-reference instead.
-- **Configuration:** Update `.workflow-config.yaml` when adding new guides to ensure they are included in documentation reviews.
+- **Add New Guides:** Follow [meta/GUIDE_AUTHORING_GUIDE.md](../meta/GUIDE_AUTHORING_GUIDE.md)
+  for the canonical section order, writing style rules, folder placement, and
+  all four registration steps. This is the authoritative reference for new guide
+  authorship.
+- **Update Existing Guides:** Improve clarity, fix errors, or update for accuracy. Avoid duplicating content — cross-reference instead.
+- **Configuration:** Update `.workflow-config.yaml` when adding new guides to ensure they are included in documentation reviews. See [CLAUDE.md](../CLAUDE.md) for config rules.
 - **Pull Requests:** Submit PRs with clear descriptions. Reference related issues or guides when applicable.
 
 ## Code of Conduct

@@ -6,9 +6,21 @@ doc_template_lib provides reusable Markdown documentation templates for software
 
 ## Structure
 
-- All guides are Markdown files at the repository root.
-- No source code, build system, or test framework is included.
-- `.workflow-config.yaml` configures documentation review and CI.
+Guides are organized into four subject-scoped folders:
+
+| Folder | Subject matter |
+| --- | --- |
+| `code_quality/` | General programming principles: design patterns, testing, naming, error handling, observability, AI-assisted workflow |
+| `domain_specific/` | Domain model, API, and platform topics: DDD, REST, mobile-first, module architecture |
+| `frontend/` | UI framework and browser-platform guidance: React, component design, state |
+| `meta/` | Guidance about this library itself: authoring conventions, contribution process |
+
+Repository meta-docs (not reusable guides) live in `docs/`. Configuration and
+CI tooling live at the repository root alongside `CLAUDE.md` and
+`.workflow-config.yaml`.
+
+There is no source code, build system, or test framework. `.workflow-config.yaml`
+configures the `ai-workflow` documentation review pipeline.
 
 ## Design Principles
 

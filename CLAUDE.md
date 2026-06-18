@@ -78,6 +78,15 @@ ai-workflow run --stage full     # full pipeline (adds context, markdown lint, s
 ai-workflow resume               # resume an interrupted run from checkpoint
 ```
 
+### Verification by task type
+
+| Task | Verification command |
+| --- | --- |
+| Edit an existing guide | `ai-workflow run --stage quick` |
+| Add a new guide (after all four registration steps) | `ai-workflow run --stage quick` |
+| Update `.workflow-config.yaml` | `ai-workflow run --stage quick` |
+| Full consistency and lint check | `ai-workflow run --stage full` |
+
 ### Key config rules
 
 **Do not add a `steps:` key under `workflow.stages.<stage>`.**
