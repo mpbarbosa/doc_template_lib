@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-06-18
+- Added `## Review Heuristics` section to CLAUDE_CODE_WORKFLOW_GUIDE.md —
+  five named tests (Single-Concern Scope, Tool Call Scope,
+  Verification-Before-Commit, Commit Message, CLAUDE.md Currency) extracted
+  from existing guide content into the canonical section
+- Added backlinks to CLAUDE_CODE_WORKFLOW_GUIDE.md in all five guides it
+  cross-references: INCREMENTAL_CHANGE_GUIDE, LLM_CONTEXT_GUIDE,
+  INTERFACE_FIRST_GUIDE, CODE_QUALITY_CONTROL_GUIDE, NAMING_GUIDE
+
 ## [1.7.0] - 2026-06-18
 - Added meta/GUIDE_AUTHORING_GUIDE.md — how to plan, write, structure, and
   register a new guide in this library; covers folder placement, canonical
