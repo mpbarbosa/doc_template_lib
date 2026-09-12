@@ -77,25 +77,6 @@ code models make safer edits with less guesswork.
 8. Tests should not require broad fixture setup when only one focused dependency
    is needed.
 
-## Positive Signals
-
-- Dependencies are injected or imported for a clear reason.
-- Public interfaces are small and stable.
-- Call chains are easy to trace.
-- A change in one module rarely forces edits in distant modules.
-- Shared configuration has a single source of truth.
-- Documents cross-reference related material instead of duplicating it.
-
-## Warning Signs
-
-- Modules import across layers for convenience.
-- Classes instantiate their own dependencies deep inside business logic.
-- Helpers know too much about callers, storage, transport, and presentation.
-- Shared mutable state coordinates unrelated components.
-- Hardcoded values appear in many places and must change together.
-- Refactors require synchronized edits across many files with no clear boundary.
-- A function accepts a large object but uses only a few fields.
-
 ## Applying Low Coupling by Component Type
 
 | Component type | Low-coupling approach |
@@ -152,6 +133,7 @@ surface deliberately.
 6. Centralize repeated configuration and remove duplicated hardcoded values.
 7. Re-check whether the component can be tested in isolation with simple mocks
    or stubs.
+8. Split modules that both own logic and manage many external dependencies.
 
 ## Review Heuristics
 
@@ -183,16 +165,24 @@ system boundary?
 Are shared values, instructions, or dependency rules repeated in several places
 instead of referenced from one source?
 
-## Preferred Fixes
+## Positive Signals
 
-1. Introduce clear interfaces at layer boundaries.
-2. Move composition to top-level orchestrators, factories, or entry points.
-3. Replace hidden shared state with explicit inputs, outputs, or scoped context
-   objects.
-4. Split modules that both own logic and manage many external dependencies.
-5. Centralize configuration that must stay consistent across files.
-6. Replace repeated documentation blocks with focused source documents and
-   cross-links.
+- Dependencies are injected or imported for a clear reason.
+- Public interfaces are small and stable.
+- Call chains are easy to trace.
+- A change in one module rarely forces edits in distant modules.
+- Shared configuration has a single source of truth.
+- Documents cross-reference related material instead of duplicating it.
+
+## Warning Signs
+
+- Modules import across layers for convenience.
+- Classes instantiate their own dependencies deep inside business logic.
+- Helpers know too much about callers, storage, transport, and presentation.
+- Shared mutable state coordinates unrelated components.
+- Hardcoded values appear in many places and must change together.
+- Refactors require synchronized edits across many files with no clear boundary.
+- A function accepts a large object but uses only a few fields.
 
 ## Related Guides
 

@@ -86,27 +86,6 @@ semi-automated changes.
 8. When full referential transparency is not practical, keep the impure surface
    narrow and make the source of non-determinism obvious.
 
-## Positive Signals
-
-- A function's output can be predicted from its arguments alone.
-- Helpers return new values instead of mutating inputs.
-- Domain logic can be tested with plain data and direct assertions.
-- Time and random sources are injected or passed as parameters.
-- Effectful code is concentrated in entry points, adapters, handlers, or
-  boundary services.
-- Re-running the same calculation with the same inputs gives the same result.
-
-## Warning Signs
-
-- A function reads globals, environment variables, or singleton state without
-  making that dependency explicit.
-- Logic calls `Date.now()`, random generators, or current process state deep
-  inside reusable code.
-- Helpers mutate arrays, objects, caches, or shared registries in place.
-- One method both decides policy and performs several side effects.
-- Tests require broad setup because the unit depends on hidden runtime context.
-- Behavior changes depending on call order or prior invocations.
-
 ## Applying Referential Transparency by Component Type
 
 | Component type | Referentially transparent approach |
@@ -163,6 +142,8 @@ hidden outputs.
 5. Move persistence, logging, network, and UI updates to boundary code.
 6. Re-check whether the core behavior can now be tested with direct input/output
    assertions.
+7. Rename intentionally effectful functions so callers can see the contract
+   from the name alone.
 
 ## Review Heuristics
 
@@ -201,16 +182,43 @@ or are they scattered across reusable logic?
 
 Scattered effects make both human review and LLM-assisted changes less safe.
 
-## Preferred Fixes
+## Positive Signals
 
-1. Extract pure helper functions from effectful workflows.
-2. Pass clocks, configuration, and external results in explicitly.
-3. Replace in-place mutation with returned copies or derived values.
-4. Move logging, persistence, transport, and UI updates to boundary code.
-5. Rename intentionally effectful functions so callers can see the contract.
-6. Keep related architectural guidance in [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md)
-   and [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) rather than duplicating
-   it here.
+- A function's output can be predicted from its arguments alone.
+- Helpers return new values instead of mutating inputs.
+- Domain logic can be tested with plain data and direct assertions.
+- Time and random sources are injected or passed as parameters.
+- Effectful code is concentrated in entry points, adapters, handlers, or
+  boundary services.
+- Re-running the same calculation with the same inputs gives the same result.
+
+## Warning Signs
+
+- A function reads globals, environment variables, or singleton state without
+  making that dependency explicit.
+- Logic calls `Date.now()`, random generators, or current process state deep
+  inside reusable code.
+- Helpers mutate arrays, objects, caches, or shared registries in place.
+- One method both decides policy and performs several side effects.
+- Tests require broad setup because the unit depends on hidden runtime context.
+- Behavior changes depending on call order or prior invocations.
+
+## Related Guides
+
+- [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md) for keeping the pure
+  calculation and the effectful boundary as two separately named
+  responsibilities, rather than one function doing both.
+- [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for injecting clocks,
+  random sources, and external clients as explicit collaborators instead of
+  reaching for them from inside otherwise pure logic.
+- [CLEAN_ARCHITECTURE_GUIDE.md](./CLEAN_ARCHITECTURE_GUIDE.md) for placing
+  effectful boundary code in the outer layer while keeping domain and
+  use-case logic pure.
+- [DEFENSIVE_CODING_GUIDE.md](./DEFENSIVE_CODING_GUIDE.md) for the
+  "parse, don't validate" pattern, which keeps validated data referentially
+  transparent once it has crossed the boundary.
+- [UNIT_TEST_GUIDE.md](./UNIT_TEST_GUIDE.md) for testing pure logic with
+  direct input/output assertions instead of live clocks or external services.
 
 ## Summary Checklist
 

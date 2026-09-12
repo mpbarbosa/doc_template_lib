@@ -289,30 +289,6 @@ Use factories when:
 9. Prefer value objects over primitive types for domain-significant data.
 10. Document the context map when the system has more than one bounded context.
 
-## Positive Signals
-
-- The core domain vocabulary appears consistently in code, tests, and docs.
-- Each bounded context has a clear owner and a visible boundary.
-- Infrastructure code imports domain types; domain code imports nothing from
-  infrastructure.
-- Aggregates are small and protect real invariants.
-- External API shapes are translated at context edges, not mirrored inside.
-- New features have an obvious home in an existing context or a well-reasoned
-  new one.
-- Business rules can be understood and tested without starting a database or
-  server.
-
-## Warning Signs
-
-- Business rules are scattered across HTTP handlers, database queries, and
-  background jobs.
-- The same concept is named differently across modules, tests, and docs.
-- Entities contain database column names or API field names directly.
-- Aggregates grow large because convenience edits bypass the root.
-- A "domain" layer that imports ORM decorators, HTTP types, or SDK clients.
-- Transactions span multiple aggregates in a single call.
-- No clear answer to "which context owns this rule?"
-
 ## Applying DDD by Component Type
 
 | Component type | DDD approach |
@@ -380,6 +356,10 @@ incrementally rather than rewriting.
    communicated.
 8. Defer introducing repositories, factories, and context maps until the model
    stabilizes enough to warrant them.
+9. Replace direct infrastructure calls with repository interfaces defined in
+   the domain layer.
+10. Delete abstractions that mirror external shapes without adding domain
+    value.
 
 ## Review Heuristics
 
@@ -416,18 +396,29 @@ Are domain events named in past tense and do they carry enough information for
 listeners to act without calling back? Events that describe commands or require
 the listener to re-query the emitter are design smells.
 
-## Preferred Fixes
+## Positive Signals
 
-1. Rename types, modules, and methods to match the ubiquitous language.
-2. Extract scattered business rules into named domain services or value types.
-3. Move infrastructure imports out of domain objects behind interfaces.
-4. Introduce anti-corruption layers at boundaries where external models leak.
-5. Shrink large aggregates by splitting them at natural consistency sub-groups.
-6. Replace direct infrastructure calls with repository interfaces defined in
-   the domain layer.
-7. Introduce domain events where side effects are currently triggered
-   procedurally across layers.
-8. Delete abstractions that mirror external shapes without adding domain value.
+- The core domain vocabulary appears consistently in code, tests, and docs.
+- Each bounded context has a clear owner and a visible boundary.
+- Infrastructure code imports domain types; domain code imports nothing from
+  infrastructure.
+- Aggregates are small and protect real invariants.
+- External API shapes are translated at context edges, not mirrored inside.
+- New features have an obvious home in an existing context or a well-reasoned
+  new one.
+- Business rules can be understood and tested without starting a database or
+  server.
+
+## Warning Signs
+
+- Business rules are scattered across HTTP handlers, database queries, and
+  background jobs.
+- The same concept is named differently across modules, tests, and docs.
+- Entities contain database column names or API field names directly.
+- Aggregates grow large because convenience edits bypass the root.
+- A "domain" layer that imports ORM decorators, HTTP types, or SDK clients.
+- Transactions span multiple aggregates in a single call.
+- No clear answer to "which context owns this rule?"
 
 ## Related Guides
 

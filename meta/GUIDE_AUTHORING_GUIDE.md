@@ -89,6 +89,28 @@ others are included when they add value.
 Do not add sections that are not in this list without a clear reason. Extra
 sections that restate content elsewhere in the guide are a scope signal.
 
+**Two extra sections have appeared across the library and are resolved here
+so the next author does not have to guess:**
+
+- **`## [Subject] and Code LLMs`** (with `### Why LLMs Benefit` and
+  `### Where [Failure Mode] Hurts LLMs` sub-headings) is a recognized topic
+  section under item 6, positioned immediately after `Why It Matters` and
+  before `Required Rules`. It is expected, not optional, for guides in
+  `code_quality/` and `frontend/` — a new guide in those folders should
+  include it unless the subject genuinely has no bearing on LLM-assisted
+  editing.
+- **`## Preferred Fixes` is not a sanctioned section and must not be added.**
+  Every instance found in the library restated the adjacent
+  `## Refactoring for [Subject]` section almost line for line. If a guide
+  needs remediation steps, put them in `Refactoring for [Subject]` (or, where
+  there is no such section, as items under `## Best Practices`) — not in a
+  second section that says the same thing under a different heading.
+
+Do not rename a required section, including `## Required Rules` (for example
+to `## Quality Gates`) — Required Rule 5 below already forbids this, but it
+has been violated in practice, so it is restated here at the table it refers
+to.
+
 ## Writing Style
 
 **Be specific over general.** "Validate at system boundaries" is actionable.

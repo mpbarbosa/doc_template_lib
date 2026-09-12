@@ -151,25 +151,6 @@ these gates.
 - Coverage targets may be useful, but behavior quality matters more than a
   single coverage percentage.
 
-## Positive Signals
-
-- Pure helpers can be tested with direct input/output assertions.
-- Test setup is short enough that the behavior under test is obvious.
-- External dependencies are injected rather than constructed inside the unit.
-- One failing test points at one small responsibility.
-- Refactors can change internals without rewriting behavior-focused assertions.
-- Async code is tested with explicit control over timing and outcomes.
-
-## Warning Signs
-
-- A "unit" test starts a server, opens a real database, or performs live I/O.
-- Tests pass only when run in a specific order.
-- Several unrelated assertions are bundled into one vague test.
-- Assertions inspect private fields or internal collection choices with no
-  contract reason.
-- Large global fixtures hide what the unit actually needs.
-- A test suite becomes slow because boundaries were not isolated cleanly.
-
 ## Test Structure Guidance
 
 Adapt the exact layout to the project's language and framework, but keep the
@@ -302,6 +283,25 @@ of the test is buried in large fixtures or helpers, shrink the setup.
 Should this really be a unit test, or is it trying to prove integration between
 multiple real systems? If the latter, move it to the appropriate integration or
 end-to-end suite instead of weakening the definition of unit testing.
+
+## Positive Signals
+
+- Pure helpers can be tested with direct input/output assertions.
+- Test setup is short enough that the behavior under test is obvious.
+- External dependencies are injected rather than constructed inside the unit.
+- One failing test points at one small responsibility.
+- Refactors can change internals without rewriting behavior-focused assertions.
+- Async code is tested with explicit control over timing and outcomes.
+
+## Warning Signs
+
+- A "unit" test starts a server, opens a real database, or performs live I/O.
+- Tests pass only when run in a specific order.
+- Several unrelated assertions are bundled into one vague test.
+- Assertions inspect private fields or internal collection choices with no
+  contract reason.
+- Large global fixtures hide what the unit actually needs.
+- A test suite becomes slow because boundaries were not isolated cleanly.
 
 ## Related Guides
 

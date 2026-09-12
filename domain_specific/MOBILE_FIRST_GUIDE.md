@@ -73,25 +73,6 @@ and larger-screen changes are easier to isolate.
 7. Keep performance budgets biased toward mobile network and device conditions.
 8. Test the base flow on small viewports before optimizing larger layouts.
 
-## Positive Signals
-
-- The default stylesheet works well without any media query.
-- Breakpoints use `min-width` and add capability rather than undo defaults.
-- Primary actions are visible and reachable without horizontal scrolling.
-- Interactive controls are sized and spaced for touch.
-- Small-screen content order matches task priority.
-- Heavier assets or enhancements load conditionally instead of by default.
-
-## Warning Signs
-
-- The base layout assumes desktop width and is later overridden for mobile.
-- Responsive rules are mostly `max-width` fixes undoing large-screen defaults.
-- Key interactions depend on hover states with no touch equivalent.
-- Important actions disappear below the fold because decorative content comes
-  first.
-- Fixed widths, large margins, or wide tables force horizontal scrolling.
-- Small screens receive the same heavy assets and scripts as desktop by default.
-
 ## Core Principles
 
 ### Content First
@@ -565,6 +546,25 @@ without relying on hover-only behavior?
 Are small-screen users paying for assets and behaviors that only benefit larger
 screens?
 
+## Positive Signals
+
+- The default stylesheet works well without any media query.
+- Breakpoints use `min-width` and add capability rather than undo defaults.
+- Primary actions are visible and reachable without horizontal scrolling.
+- Interactive controls are sized and spaced for touch.
+- Small-screen content order matches task priority.
+- Heavier assets or enhancements load conditionally instead of by default.
+
+## Warning Signs
+
+- The base layout assumes desktop width and is later overridden for mobile.
+- Responsive rules are mostly `max-width` fixes undoing large-screen defaults.
+- Key interactions depend on hover states with no touch equivalent.
+- Important actions disappear below the fold because decorative content comes
+  first.
+- Fixed widths, large margins, or wide tables force horizontal scrolling.
+- Small screens receive the same heavy assets and scripts as desktop by default.
+
 ## Preferred Fixes
 
 1. Move the smallest-screen layout into the base styles.
@@ -578,8 +578,12 @@ screens?
 
 ## Related Guides
 
-- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md)
-- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md)
+- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md) for keeping
+  a base layout's responsibility — render the small-screen experience —
+  separate from the capability-based enhancements layered on top of it.
+- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md) for keeping
+  each enhancement free to be skipped entirely, rather than depending on the
+  internals of the base layout it enhances.
 
 ## Summary Checklist
 
