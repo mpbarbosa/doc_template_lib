@@ -174,31 +174,6 @@ gates.
 - Separate integration tests from unit tests in the project's test commands so
   each suite can be run independently.
 
-## Positive Signals
-
-- Each test names the boundary or collaborator it exercises.
-- Test setup is explicit about what state the environment starts in.
-- Failures in one test do not cascade into unrelated tests.
-- The integration suite can be run in isolation with a single command.
-- Error paths at the boundary are covered as deliberately as happy paths.
-- Schema changes cause the relevant integration tests to fail immediately.
-- Containers or embedded services start once and are shared within the suite
-  for speed.
-
-## Warning Signs
-
-- An "integration" test mocks the external dependency it was written to verify.
-- Tests share mutable database rows or queue state with no cleanup contract.
-- Integration tests are mixed in the same run command as unit tests with no
-  way to separate them.
-- Tests pass locally but fail in CI because of environment-specific
-  configuration.
-- A test seeds data inline inside assertions rather than in explicit setup.
-- The same integration test resets containers between every individual test
-  case, causing the suite to be prohibitively slow.
-- Integration tests verify internal implementation details of the external
-  system rather than the behavior the code depends on.
-
 ## Test Structure Guidance
 
 Adapt layout to the project's language and framework, but keep integration
@@ -388,6 +363,31 @@ Should this be an integration test, or is it a full end-to-end user flow? If
 the test requires the full application stack, the HTTP layer, and a real
 browser or client, move it to the end-to-end suite instead of inflating the
 integration suite.
+
+## Positive Signals
+
+- Each test names the boundary or collaborator it exercises.
+- Test setup is explicit about what state the environment starts in.
+- Failures in one test do not cascade into unrelated tests.
+- The integration suite can be run in isolation with a single command.
+- Error paths at the boundary are covered as deliberately as happy paths.
+- Schema changes cause the relevant integration tests to fail immediately.
+- Containers or embedded services start once and are shared within the suite
+  for speed.
+
+## Warning Signs
+
+- An "integration" test mocks the external dependency it was written to verify.
+- Tests share mutable database rows or queue state with no cleanup contract.
+- Integration tests are mixed in the same run command as unit tests with no
+  way to separate them.
+- Tests pass locally but fail in CI because of environment-specific
+  configuration.
+- A test seeds data inline inside assertions rather than in explicit setup.
+- The same integration test resets containers between every individual test
+  case, causing the suite to be prohibitively slow.
+- Integration tests verify internal implementation details of the external
+  system rather than the behavior the code depends on.
 
 ## Related Guides
 

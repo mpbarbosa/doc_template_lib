@@ -78,27 +78,6 @@ update knowledge without creating silent divergence.
 7. When the same behavior is needed in two contexts, introduce an abstraction
    rather than inlining the logic in both places.
 
-## Positive Signals
-
-- A change to a rule, value, or policy requires editing one file.
-- Shared logic has a name that explains what it encodes.
-- Configuration is read from a single source throughout the codebase.
-- Related documents reference a shared guide rather than restating it.
-- Diffs for a knowledge change are small and localized.
-- Abstractions are named after the concept they represent, not where they
-  happen to be used.
-
-## Warning Signs
-
-- The same calculation, condition, or validation appears in multiple files.
-- A constant is hardcoded with the same value in several places.
-- Two documents explain the same rule differently.
-- Changing one fact requires a grep-and-replace across the codebase.
-- Comments like "keep in sync with X" appear near copied code.
-- A test fixture, schema definition, or message string is duplicated with
-  minor variations.
-- Copied code has already drifted and the copies no longer agree.
-
 ## Applying DRY by Component Type
 
 | Component type | DRY approach |
@@ -158,6 +137,8 @@ treating all copies as equivalent.
 5. Rename the extracted abstraction if needed so its purpose is clear.
 6. Verify that the single source covers all the cases that the copies handled.
 7. Update documentation to link rather than restate where applicable.
+8. Delete "keep in sync" comments by eliminating the duplication they guard,
+   rather than leaving the comment as a substitute for a real abstraction.
 
 ## Review Heuristics
 
@@ -189,14 +170,43 @@ without ambiguity? If not, there is likely no single source of truth.
 Does a comment say "keep in sync with" or "same as"? That is a marker of
 unresolved duplication waiting to drift.
 
-## Preferred Fixes
+## Positive Signals
 
-1. Extract duplicated logic into a named function, module, or document.
-2. Replace inline copies with a reference to the extracted abstraction.
-3. Move repeated constants and configuration values to a single shared source.
-4. Remove documentation copies and add cross-links to the authoritative guide.
-5. Parameterize diverged variants instead of maintaining separate copies.
-6. Delete "keep in sync" comments by eliminating the duplication they guard.
+- A change to a rule, value, or policy requires editing one file.
+- Shared logic has a name that explains what it encodes.
+- Configuration is read from a single source throughout the codebase.
+- Related documents reference a shared guide rather than restating it.
+- Diffs for a knowledge change are small and localized.
+- Abstractions are named after the concept they represent, not where they
+  happen to be used.
+
+## Warning Signs
+
+- The same calculation, condition, or validation appears in multiple files.
+- A constant is hardcoded with the same value in several places.
+- Two documents explain the same rule differently.
+- Changing one fact requires a grep-and-replace across the codebase.
+- Comments like "keep in sync with X" appear near copied code.
+- A test fixture, schema definition, or message string is duplicated with
+  minor variations.
+- Copied code has already drifted and the copies no longer agree.
+
+## Related Guides
+
+- [CLEAN_ARCHITECTURE_GUIDE.md](./CLEAN_ARCHITECTURE_GUIDE.md) for where the
+  single authoritative source of a rule should live relative to layer
+  boundaries, so extraction does not just relocate the duplication.
+- [HIGH_COHESION_GUIDE.md](./HIGH_COHESION_GUIDE.md) for telling apart real
+  duplication from two unrelated concerns that merely look similar — merging
+  those is a cohesion violation, not a DRY fix.
+- [LOW_COUPLING_GUIDE.md](./LOW_COUPLING_GUIDE.md) for keeping the extracted
+  abstraction's contract narrow, so callers are not tempted to recreate the
+  duplication just to avoid depending on it.
+- [NAMING_GUIDE.md](./NAMING_GUIDE.md) for naming the extracted abstraction
+  after the concept it represents, not the place it was extracted from.
+- [LLM_CONTEXT_GUIDE.md](./LLM_CONTEXT_GUIDE.md) for how the pattern
+  consistency that results from removing duplication lets a model generalize
+  correctly from a single example.
 
 ## Summary Checklist
 

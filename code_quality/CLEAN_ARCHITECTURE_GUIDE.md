@@ -76,6 +76,18 @@ gives code models stronger signals for making safer, correctly scoped edits.
 - Generic utility files that cross layers make the dependency direction
   ambiguous.
 
+## Layer Reference
+
+| Layer | Typical contents | Allowed dependencies |
+| --- | --- | --- |
+| Domain (entities) | Core business rules, value types, invariants, domain errors | None — no external imports |
+| Use cases | Application-specific workflows, orchestration, policy decisions | Domain layer only |
+| Interface adapters | Controllers, presenters, translators, use-case facades | Use cases and domain |
+| Frameworks & drivers | HTTP handlers, database clients, SDKs, CLI entry points, configuration | Adapters and use cases |
+
+Adjust layer names and boundaries to match the project's vocabulary. The rule
+that matters is dependency direction, not the names.
+
 ## Required Rules
 
 1. Dependencies only point inward. Outer layers depend on inner layers. Inner
@@ -90,18 +102,6 @@ gives code models stronger signals for making safer, correctly scoped edits.
 6. Each layer should contain only the code that fits its responsibility.
 7. Interfaces and ports for external collaborators must be defined inside, not
    in the outer layer that implements them.
-
-## Layer Reference
-
-| Layer | Typical contents | Allowed dependencies |
-| --- | --- | --- |
-| Domain (entities) | Core business rules, value types, invariants, domain errors | None — no external imports |
-| Use cases | Application-specific workflows, orchestration, policy decisions | Domain layer only |
-| Interface adapters | Controllers, presenters, translators, use-case facades | Use cases and domain |
-| Frameworks & drivers | HTTP handlers, database clients, SDKs, CLI entry points, configuration | Adapters and use cases |
-
-Adjust layer names and boundaries to match the project's vocabulary. The rule
-that matters is dependency direction, not the names.
 
 ## Best Practices
 

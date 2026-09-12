@@ -190,34 +190,6 @@ Every change to a critical user-visible flow should satisfy these gates.
 - Run the end-to-end suite in CI on every change to the main branch; selectively
   in local development based on which flows are affected.
 
-## Positive Signals
-
-- Each test is named after the user journey or acceptance criterion it covers.
-- Setup is explicit: the starting state of data and environment is defined per
-  scenario.
-- A failing test points clearly at the broken user flow, not at a random
-  internal assertion.
-- The suite can be run in isolation with a single command.
-- Flakiness is tracked and actively reduced; retry logic is intentional and
-  bounded.
-- Critical flows are covered; non-critical edge cases are deferred to unit or
-  integration tests.
-- Environment setup is documented and reproducible.
-
-## Warning Signs
-
-- End-to-end tests mock the system's own services or databases.
-- Tests share mutable seed data and fail non-deterministically depending on
-  execution order.
-- The suite is treated as the primary regression net, replacing unit and
-  integration coverage rather than complementing it.
-- Fixed sleeps are used in place of explicit wait conditions.
-- Tests are too brittle: they break on UI changes that do not affect the user
-  journey.
-- The suite grows without constraint, becoming too slow to run regularly.
-- Tests pass in CI but fail locally, or vice versa, because of environment
-  differences that are not documented.
-
 ## Test Structure Guidance
 
 Adapt layout to the project's platform and tooling, but keep end-to-end tests
@@ -386,6 +358,34 @@ lower-level coverage.
 Would this test run unchanged on a colleague's machine and in CI given only the
 documented setup? If it depends on local configuration that is not provisioned
 by the test infrastructure, it will break silently outside your environment.
+
+## Positive Signals
+
+- Each test is named after the user journey or acceptance criterion it covers.
+- Setup is explicit: the starting state of data and environment is defined per
+  scenario.
+- A failing test points clearly at the broken user flow, not at a random
+  internal assertion.
+- The suite can be run in isolation with a single command.
+- Flakiness is tracked and actively reduced; retry logic is intentional and
+  bounded.
+- Critical flows are covered; non-critical edge cases are deferred to unit or
+  integration tests.
+- Environment setup is documented and reproducible.
+
+## Warning Signs
+
+- End-to-end tests mock the system's own services or databases.
+- Tests share mutable seed data and fail non-deterministically depending on
+  execution order.
+- The suite is treated as the primary regression net, replacing unit and
+  integration coverage rather than complementing it.
+- Fixed sleeps are used in place of explicit wait conditions.
+- Tests are too brittle: they break on UI changes that do not affect the user
+  journey.
+- The suite grows without constraint, becoming too slow to run regularly.
+- Tests pass in CI but fail locally, or vice versa, because of environment
+  differences that are not documented.
 
 ## Related Guides
 

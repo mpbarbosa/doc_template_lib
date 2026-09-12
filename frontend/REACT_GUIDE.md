@@ -81,33 +81,6 @@ scope, hidden dependencies, and unpredictable change impact.
 7. Derived values are computed from state rather than stored as redundant state.
 8. Components do not reach outside their subtree for DOM nodes or sibling state.
 
-## Positive Signals
-
-- A component's job can be described in one sentence.
-- Props are typed and have intention-revealing names.
-- `useEffect` bodies are short, focused on one side effect, and include
-  cleanup when required.
-- State is collocated with the smallest subtree that needs it.
-- Custom hooks have names that reflect their purpose, not their mechanics
-  (e.g., `useOrderSummary`, not `useEffect2`).
-- The JSX returned from a component is readable without expanding function
-  definitions.
-- A component can be rendered in isolation for testing or Storybook without
-  mocking the entire application.
-
-## Warning Signs
-
-- A component file exceeds a few hundred lines with no extraction.
-- A `useEffect` has more than two or three dependencies, or an empty
-  dependency array that silences a linter warning.
-- State is lifted multiple levels above the consumer "just in case".
-- Logic that belongs in an event handler is written in `useEffect`.
-- The same fetch or transform appears in multiple sibling components.
-- Prop names reflect internal implementation details rather than the consuming
-  component's semantics.
-- A component imports another component's internal hook or internal state shape
-  directly.
-
 ## Component Design
 
 ### Single Responsibility
@@ -405,6 +378,33 @@ children that need it? If so, lower it.
 If a parent re-renders, does a child re-render unnecessarily? Profile before
 optimizing; do not add `memo` speculatively.
 
+## Positive Signals
+
+- A component's job can be described in one sentence.
+- Props are typed and have intention-revealing names.
+- `useEffect` bodies are short, focused on one side effect, and include
+  cleanup when required.
+- State is collocated with the smallest subtree that needs it.
+- Custom hooks have names that reflect their purpose, not their mechanics
+  (e.g., `useOrderSummary`, not `useEffect2`).
+- The JSX returned from a component is readable without expanding function
+  definitions.
+- A component can be rendered in isolation for testing or Storybook without
+  mocking the entire application.
+
+## Warning Signs
+
+- A component file exceeds a few hundred lines with no extraction.
+- A `useEffect` has more than two or three dependencies, or an empty
+  dependency array that silences a linter warning.
+- State is lifted multiple levels above the consumer "just in case".
+- Logic that belongs in an event handler is written in `useEffect`.
+- The same fetch or transform appears in multiple sibling components.
+- Prop names reflect internal implementation details rather than the consuming
+  component's semantics.
+- A component imports another component's internal hook or internal state shape
+  directly.
+
 ## Preferred Fixes
 
 1. Split components that mix fetching, transformation, and rendering into
@@ -421,11 +421,20 @@ optimizing; do not add `memo` speculatively.
 
 ## Related Guides
 
-- [MOBILE_FIRST_GUIDE.md](../domain_specific/MOBILE_FIRST_GUIDE.md)
-- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md)
-- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md)
-- [UNIT_TEST_GUIDE.md](../code_quality/UNIT_TEST_GUIDE.md)
-- [INTEGRATION_TEST_GUIDE.md](../code_quality/INTEGRATION_TEST_GUIDE.md)
+- [MOBILE_FIRST_GUIDE.md](../domain_specific/MOBILE_FIRST_GUIDE.md) for
+  building the same component tree so it works at small viewports and touch
+  input first, before it is enhanced for larger screens.
+- [HIGH_COHESION_GUIDE.md](../code_quality/HIGH_COHESION_GUIDE.md) for the
+  single-responsibility test that also decides where a component should be
+  split.
+- [LOW_COUPLING_GUIDE.md](../code_quality/LOW_COUPLING_GUIDE.md) for keeping a
+  component's props and context dependencies minimal so it can move or be
+  reused without dragging its siblings along.
+- [UNIT_TEST_GUIDE.md](../code_quality/UNIT_TEST_GUIDE.md) for testing
+  extracted hooks and pure logic in isolation from rendering.
+- [INTEGRATION_TEST_GUIDE.md](../code_quality/INTEGRATION_TEST_GUIDE.md) for
+  testing a component through its real collaborators and user-visible
+  behavior, which is what Testing Guidance above recommends.
 
 ## Summary Checklist
 

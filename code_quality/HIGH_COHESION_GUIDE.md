@@ -73,27 +73,6 @@ operate on the system more safely.
 7. Entry points may compose multiple concerns, but reusable code beneath them
    should remain narrowly focused.
 
-## Positive Signals
-
-- File names match the responsibility they implement.
-- Public APIs are small and intention-revealing.
-- Helper functions directly support the file's main concern.
-- A module's tests cluster around one behavior area.
-- A document can be scanned quickly without shifting between unrelated topics.
-- Changes to one behavior rarely require edits to distant, unrelated files.
-
-## Warning Signs
-
-- One file edits config, performs I/O, formats output, and contains business
-  rules.
-- A function both decides policy and performs several different side effects.
-- `utils`, `helpers`, or `manager` modules accumulate unrelated responsibilities.
-- A document mixes tutorial, reference, architecture, troubleshooting, and
-  release notes in one place.
-- A file needs large section comments to justify why unrelated logic lives
-  together.
-- Naming becomes generic because the component does too many things.
-
 ## Applying Cohesion by Component Type
 
 | Component type | Cohesive responsibility |
@@ -147,6 +126,8 @@ responsibilities.
 4. Leave composition in entry points and keep reusable rules in focused units.
 5. Rename files and symbols so the single responsibility is obvious.
 6. Re-check that each extracted piece can be described in one sentence.
+7. Replace generic helper buckets (`utils`, `helpers`, `manager`) with
+   purpose-specific modules named for what they actually do.
 
 ## Review Heuristics
 
@@ -172,14 +153,26 @@ If the best name is vague, the responsibility likely is too.
 If the component can be split into two focused parts without awkward surgery, it
 may already contain multiple responsibilities.
 
-## Preferred Fixes
+## Positive Signals
 
-1. Extract unrelated responsibilities into narrowly named modules.
-2. Keep composition in entry points and business rules in reusable library code.
-3. Move formatting, transport, persistence, and orchestration into their own
-   layers.
-4. Replace generic helper buckets with purpose-specific modules.
-5. Split broad documents into focused guides with clear cross-links.
+- File names match the responsibility they implement.
+- Public APIs are small and intention-revealing.
+- Helper functions directly support the file's main concern.
+- A module's tests cluster around one behavior area.
+- A document can be scanned quickly without shifting between unrelated topics.
+- Changes to one behavior rarely require edits to distant, unrelated files.
+
+## Warning Signs
+
+- One file edits config, performs I/O, formats output, and contains business
+  rules.
+- A function both decides policy and performs several different side effects.
+- `utils`, `helpers`, or `manager` modules accumulate unrelated responsibilities.
+- A document mixes tutorial, reference, architecture, troubleshooting, and
+  release notes in one place.
+- A file needs large section comments to justify why unrelated logic lives
+  together.
+- Naming becomes generic because the component does too many things.
 
 ## Related Guides
 
